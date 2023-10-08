@@ -153,9 +153,9 @@ As a user, I would like to be able to see a chart showing the upcoming events in
   - **Given** the user is in the events detail page, **when** the user clicks the button to see a chart of those events in all the cities as a comparison, **then** a chart with the number of upcoming events for every city, will be shown to the user.
   - </details>
 
-**SERVERLESS FUNCTIONS**
+**Serverless Functions**
 
->The Meet App can use serverless functions for event notifications, real-time data processing, user authentication, event recommendations, , and scalability. By leveraging serverless technology, the app can efficiently handle backend processes, provide personalized experiences, and scale according to user demand.
+>The Meet App can use serverless functions for event notifications, real-time data processing, user authentication, event recommendations and scalability. By leveraging serverless technology, the app can efficiently handle backend processes, provide personalized experiences, and scale according to user demand.
 
 
 <!-- ![](./img/....png)
