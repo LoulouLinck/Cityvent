@@ -152,6 +152,8 @@ As a user, I would like to be able to see a chart showing the upcoming events in
 **Serverless Functions**
 
 >The Meet App can use serverless functions for event notifications, real-time data processing, user authentication, event recommendations and scalability. By leveraging serverless technology, the app can efficiently handle backend processes, provide personalized experiences, and scale according to user demand.
+>
+>In this app: serverless functions will play a role in handling authorisation for accessing public calendar events from the Google Calendar API. Users need to be authorized to retrieve event data for rendering in the React app. This authorisation is facilitated by serverless functions, which are a more efficient alternative to building and maintaining a full server for this purpose. In this context, serverless functions will generate and provide access tokens, ensuring secure access to the Google Calendar API. AWS Lambda will be the chosen cloud-service provider for implementing these serverless functions, making the app's architecture more scalable and cost-effective.
 
 
 <!-- ![](./img/....png)
