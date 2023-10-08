@@ -7,8 +7,6 @@ Create a serverless, progressive web application (PWA) in React following the te
 <!-- **Link to myFlix App:** https://... -->
 
 ## 🛠 Built With
-
-- React
 <!-- 
 ### Tech Stack
 MERN
