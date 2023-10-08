@@ -55,8 +55,6 @@ MERN
 <details>
   <summary>Client</summary>
   <ul>
-    <li>MongoDB</li>
-    <li>Express</li>
     <li>React</li>
     <li>Node.js</li>
     <li>Parcel (build tool)</li>
