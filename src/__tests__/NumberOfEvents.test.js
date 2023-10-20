@@ -27,3 +27,24 @@ describe('<NumberOfEvents /> component', () => {
       });
 
 });
+
+describe('<NumberOfEvents /> integration', () => { 
+  test('updates number events rendered according to what user types in text box', async () => {
+    const user = userEvent.setup();
+    const AppComponent = render(<App />);
+    const AppDOM = AppComponent.container.firstChild;
+
+    const NumberOfEventsDOM = AppDOM.querySelector('#numberOfEvents');
+    const numberOfEventsInput = within(NumberOfEventsDOM).queryByLabelText('Number of Events:');
+
+
+    await user.type(numberOfEventsInput, '{backspaceß}{backspace}10');
+
+    const EventListDOM = AppDOM.querySelector('#event-list');
+    const EventListItems = within(EventListDOM).queryAllByRole('listitem'); // or eventListItems?
+
+    await waitFor(() => {
+      expect(EventListItems.length).toBe(10); // or eventListItems?
+    });
+  });
+});
