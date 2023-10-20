@@ -36,18 +36,22 @@ describe('<App /> integration', () => {
     const CitySearchDOM = AppDOM.querySelector('#city-search');
     const CitySearchInput = within(CitySearchDOM).queryByRole('textbox');
 
-    await user.type(CitySearchInput, "Berlin");
-    const berlinSuggestionItem = within(CitySearchDOM).queryByText('Berlin, Germany');
-    await user.click(berlinSuggestionItem);
+    await user.type(CitySearchInput, "Berlin"); // simulates typing 'Berlin' in city textbox
+    const berlinSuggestionItem = within(CitySearchDOM).queryByText('Berlin, Germany'); // filters suggestions list to 2 suggestions: 'Berlin, Germany' & hardcoded 'See all cities'
+    await user.click(berlinSuggestionItem); // simulates clicking on the list item 'Berlin, Germany'
 
     const EventListDOM = AppDOM.querySelector('#event-list');
-    const allRenderedEventItems = within(EventListDOM).queryAllByRole('listitem');   
+    const allRenderedEventItems = within(EventListDOM).queryAllByRole('listitem');  // queries #event-list (EventList component root node DOM), finds what Event list item is rendered inside.  
 
     const allEvents = await getEvents();
     const berlinEvents = allEvents.filter(
-      event => event.location === 'Berlin, Germany'
+      event => event.location === 'Berlin, Germany' //Gets a list of all events from the mock data that are located in “Berlin, Germany”.
     );
 
-    expect(allRenderedEventItems.length).toBe(berlinEvents.length);
+    expect(allRenderedEventItems.length).toBe(berlinEvents.length); //Comparing number of events located in "Berlin, Germany" w/ array of rendered Event list items.
+    a
+    llRenderedEventItems.forEach(event => {
+      expect(event.textContent).toContain("Berlin, Germany"); //loops over filtered event list items w/ allRenderedEventItems: makes sure all items contain “Berlin, Germany”.
+    });  
   });
 });
