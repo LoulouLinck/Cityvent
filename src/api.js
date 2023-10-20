@@ -37,6 +37,17 @@ const removeQuery = () => {
   }
 };
 
+const getToken = async (code) => {
+  const encodeCode = encodeURIComponent(code);
+  const response = await fetch(
+    'https://nkgw84qfc6.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode
+  );
+  const { access_token } = await response.json();
+  access_token && localStorage.setItem("access_token", access_token);
+
+  return access_token;
+};
+
 export const getEvents = async () => { // function will fetch the list of all events
   if (window.location.href.startsWith('http://localhost')) {
     return mockData;
