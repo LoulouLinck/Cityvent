@@ -1,4 +1,6 @@
-import { render } from '@testing-library/react'; // import render() function from @testing-library/react package
+import { render, within } from '@testing-library/react'; // import render() function from @testing-library/react package
+import userEvent from '@testing-library/user-event';
+import { getEvents } from '../api';
 import App from '../App'; // imports App component from App.js 
 
 describe('<App /> component', () => { // new group/scope created via describe() function
@@ -22,5 +24,8 @@ describe('<App /> component', () => { // new group/scope created via describe() 
 
   // test('renders NumberOfEvents component', () => {
   //   expect(AppDOM.querySelector('#numberOfEvents')).toBeInTheDocument();
-  // });
+  // }); // Why this worked too?
+});
+
+describe('<App /> integration', () => {
 });
