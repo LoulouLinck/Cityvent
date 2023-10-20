@@ -1,6 +1,7 @@
-import { render } from '@testing-library/react';
+import { render, within, waitFor } from '@testing-library/react';
 import NumberOfEvents from '../components/NumberOfEvents';
 import userEvent from '@testing-library/user-event';
+import App from '../App';
 
 
 describe('<NumberOfEvents /> component', () => {
