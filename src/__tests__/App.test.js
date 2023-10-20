@@ -18,7 +18,7 @@ describe('<App /> component', () => { // new group/scope created via describe() 
   });
 
   test('renders NumberOfEvents component', () => {
-    const numberOfEventsComponent = AppDOM.querySelector('#numberOfEvents');
+    // const numberOfEventsComponent = AppDOM.querySelector('#numberOfEvents');
     expect(numberOfEventsComponent).toBeInTheDocument();
   });
 
@@ -49,8 +49,7 @@ describe('<App /> integration', () => {
     );
 
     expect(allRenderedEventItems.length).toBe(berlinEvents.length); //Comparing number of events located in "Berlin, Germany" w/ array of rendered Event list items.
-    a
-    llRenderedEventItems.forEach(event => {
+    allRenderedEventItems.forEach(event => {
       expect(event.textContent).toContain("Berlin, Germany"); //loops over filtered event list items w/ allRenderedEventItems: makes sure all items contain “Berlin, Germany”.
     });  
   });
