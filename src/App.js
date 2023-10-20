@@ -5,7 +5,7 @@ import EventList from './components/EventList';
 // import Event from './components/Event';
 import NumberOfEvents from './components/NumberOfEvents';
 
-import {  extractLocations, getEvents } from './api';
+import { extractLocations, getEvents } from './api';
 
 import './App.css';
 
@@ -24,8 +24,6 @@ const App = () => {
     setAllLocations(extractLocations(allEvents));
 }
 
-
-  
   return (
     <div className="App">
      <CitySearch allLocations={allLocations} />
