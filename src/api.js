@@ -22,7 +22,22 @@ const checkToken = async (accessToken) => {
   return result;
 };
 
-export const getEvents = async () => { // This function will fetch the list of all events
+const removeQuery = () => {
+  let newurl;
+  if (window.history.pushState && window.location.pathname) {
+    newurl =
+      window.location.protocol +
+      "//" +
+      window.location.host +
+      window.location.pathname;
+    window.history.pushState("", "", newurl);
+  } else {
+    newurl = window.location.protocol + "//" + window.location.host;
+    window.history.pushState("", "", newurl);
+  }
+};
+
+export const getEvents = async () => { // function will fetch the list of all events
   if (window.location.href.startsWith('http://localhost')) {
     return mockData;
   }
