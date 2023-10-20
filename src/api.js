@@ -17,11 +17,28 @@ export const extractLocations = (events) => {
 export const getAccessToken = async () => {
 };
 
-/**
- *
- * This function will fetch the list of all events
- */
-export const getEvents = async () => {
-  const accessToken = localStorage.getItem('access_token');
+export const getEvents = async () => { // This function will fetch the list of all events
   return mockData;
 };
+
+export const getAccessToken = async () => {
+  const accessToken = localStorage.getItem('access_token');
+  const tokenCheck = accessToken && (await checkToken(accessToken));
+
+  if (!accessToken || tokenCheck.error) { // if no token found, code checks for an authorisation code
+    await localStorage.removeItem("access_token");
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = await searchParams.get("code");
+    if (!code) { //If no authorisation code found: user redirected to Google Authorisation: can sign in & receive their code.
+      const response = await fetch(
+        "https://nkgw84qfc6.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
+      );
+      const result = await response.json();
+      const { authUrl } = result;
+      return (window.location.href = authUrl);
+    }
+    return code && getToken(code);
+  }
+  return accessToken;
+};
+
