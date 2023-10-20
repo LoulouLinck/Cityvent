@@ -17,14 +17,14 @@ describe('<App /> component', () => { // new group/scope created via describe() 
         expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
   });
 
-  test('renders NumberOfEvents component', () => {
-    // const numberOfEventsComponent = AppDOM.querySelector('#numberOfEvents');
-    expect(numberOfEventsComponent).toBeInTheDocument();
-  });
+   // test('renders NumberOfEvents component', () => {
+     // const numberOfEventsComponent = AppDOM.querySelector('#numberOfEvents');
+   //   expect(numberOfEventsComponent).toBeInTheDocument();
+  // });
 
-  // test('renders NumberOfEvents component', () => {
-  //   expect(AppDOM.querySelector('#numberOfEvents')).toBeInTheDocument();
-  // }); // Why this worked too?
+  test('renders NumberOfEvents component', () => {
+    expect(AppDOM.querySelector('#numberOfEvents')).toBeInTheDocument();
+  }); // Why this worked too?
 });
 
 describe('<App /> integration', () => {
