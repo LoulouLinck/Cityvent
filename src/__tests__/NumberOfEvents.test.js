@@ -38,7 +38,7 @@ describe('<NumberOfEvents /> integration', () => {
     const numberOfEventsInput = within(NumberOfEventsDOM).queryByLabelText('Number of Events:');
 
 
-    await user.type(numberOfEventsInput, '{backspaceß}{backspace}10');
+    await user.type(numberOfEventsInput, '{backspace}{backspace}10');
 
     const EventListDOM = AppDOM.querySelector('#event-list');
     const EventListItems = within(EventListDOM).queryAllByRole('listitem'); // or eventListItems?

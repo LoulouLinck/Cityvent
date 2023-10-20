@@ -17,7 +17,7 @@ const App = () => {
   
   useEffect(() => {
     fetchData();
-  }, [currentCity]);
+  }, [currentCity, currentNOE]);
 
   const fetchData = async () => {
     const allEvents = await getEvents();
@@ -26,7 +26,7 @@ const App = () => {
       allEvents.filter(event => event.location === currentCity)
     setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
-}
+};
 
   return (
     <div className="App">
@@ -34,7 +34,7 @@ const App = () => {
      <EventList events={events} />
     {/* why tests fails when importing event? */}
      {/* <Event/> */}
-     <NumberOfEvents/>
+     <NumberOfEvents setCurrentNOE={setCurrentNOE} />
     </div>
   );
 }
