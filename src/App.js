@@ -15,10 +15,12 @@ import './App.css';
 
 
 const App = () => {
+  const [events, setEvents] = useState([]);
+  const [currentNOE, setCurrentNOE] = useState(32);
   return (
     <div className="App">
      <CitySearch />
-     <EventList />
+     <EventList events={events} />
     {/* why tests fails when importing event? */}
      {/* <Event/> */}
      <NumberOfEvents/>
