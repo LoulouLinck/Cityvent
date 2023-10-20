@@ -42,6 +42,7 @@ describe('<App /> integration', () => {
 
     const EventListDOM = AppDOM.querySelector('#event-list');
     const allRenderedEventItems = within(EventListDOM).queryAllByRole('listitem');   
+
     const allEvents = await getEvents();
     const berlinEvents = allEvents.filter(
       event => event.location === 'Berlin, Germany'
