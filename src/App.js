@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <div className="App">
-     <CitySearch allLocations={allLocations} />
+     <CitySearch allLocations={allLocations}  setCurrentCity={setCurrentCity} />
      <EventList events={events} />
     {/* why tests fails when importing event? */}
      {/* <Event/> */}
