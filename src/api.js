@@ -23,7 +23,9 @@ const checkToken = async (accessToken) => {
 };
 
 export const getEvents = async () => { // This function will fetch the list of all events
-  return mockData;
+  if (window.location.href.startsWith('http://localhost')) {
+    return mockData;
+  }
 };
 
 export const getAccessToken = async () => {
