@@ -6,8 +6,9 @@ import App from '../App';
 
 describe('<NumberOfEvents /> component', () => {
     let NumberOfEventsComponent;
+
     beforeEach(() => {
-        NumberOfEventsComponent = render(<NumberOfEvents />);
+        NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}}/>);
     });
 
     test('contains an input with role of textbox', () => {
@@ -26,7 +27,6 @@ describe('<NumberOfEvents /> component', () => {
         await user.type(textbox, '{backspace}{backspace}10');
         expect(textbox).toHaveValue('10');
       });
-
 });
 
 describe('<NumberOfEvents /> integration', () => { 
@@ -42,10 +42,10 @@ describe('<NumberOfEvents /> integration', () => {
     await user.type(numberOfEventsInput, '{backspace}{backspace}10');
 
     const EventListDOM = AppDOM.querySelector('#event-list');
-    const EventListItems = within(EventListDOM).queryAllByRole('listitem'); // or eventListItems?
+    const eventListItems = within(EventListDOM).queryAllByRole('listitem'); // or EventListItems?
 
     await waitFor(() => {
-      expect(EventListItems.length).toBe(10); // or eventListItems?
+      expect(eventListItems.length).toBe(10); // or EventListItems?
     });
   });
 });
