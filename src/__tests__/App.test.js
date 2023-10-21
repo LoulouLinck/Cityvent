@@ -22,8 +22,13 @@ describe('<App /> component', () => { // new group/scope created via describe() 
    //   expect(numberOfEventsComponent).toBeInTheDocument();
   // });
 
+  // test('renders NumberOfEvents component', () => {
+  //   expect(AppDOM.querySelector('#numberOfEvents')).toBeInTheDocument();
+
   test('renders NumberOfEvents component', () => {
-    expect(AppDOM.querySelector('#numberOfEvents')).toBeInTheDocument();
+    const numberOfEventsComponent = AppDOM.querySelector('#numberOfEvents');
+    expect(numberOfEventsComponent).toBeInTheDocument();
+
   }); // Why this worked too?
 });
 
