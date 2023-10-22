@@ -27,10 +27,10 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
   };
 
   return (
-    <div id="city-search">
+    <div id="city-search" className="city-search">
       <input
         type="text"
-        className="city"
+        className="city city-input"
                 placeholder="Search for a city"
         value={query}
         onFocus={() => setShowSuggestions(true)}
@@ -40,12 +40,12 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
         <ul className="suggestions">
           {suggestions.map((suggestion) => {
               return (
-              <li onClick={handleItemClicked} key={suggestion}>
+              <li className="suggestion-item" onClick={handleItemClicked} key={suggestion}>
                 {suggestion}
                 </li>
               );
             })}
-            <li key='See all cities' onClick={handleItemClicked}>
+            <li className="suggestion-item"  key='See all cities' onClick={handleItemClicked}>
               <b>See all cities</b>
             </li>
         </ul> 
