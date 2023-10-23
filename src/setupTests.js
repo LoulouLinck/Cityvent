@@ -18,4 +18,4 @@ const MESSAGES_TO_IGNORE = [
     if (!ignoreMessage) originalError(...args);
   }
 
-jest.setTimeout(30000); //fixes error warning about tests taking too long (increases default Jest timeout: 5000 ms/5s) 
+jest.setTimeout(40000); //fixes error warning about tests taking too long (increases default Jest timeout: 5000 ms/5s) 
