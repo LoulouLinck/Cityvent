@@ -57,8 +57,14 @@ export const getEvents = async () => { // function will fetch the list of all ev
     return mockData;
   }
 
-  const token = await getAccessToken();
+  if (!navigator.onLine) { //checks if offline: stored event list is loaded, parsed, and returned as events. 
+    const events = localStorage.getItem("lastEvents");
+    NProgress.done();
+    return events?JSON.parse(events):[];
+  }
 
+  const token = await getAccessToken();
+  
   if (token) {
     removeQuery();
     const url =  'https://nkgw84qfc6.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
