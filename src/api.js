@@ -64,8 +64,9 @@ export const getEvents = async () => { // function will fetch the list of all ev
     const url =  'https://nkgw84qfc6.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
     const response = await fetch(url);
     const result = await response.json();
-    NProgress.done() //what does this do?
     if (result) {
+      NProgress.done();
+      localStorage.setItem("lastEvents", JSON.stringify(result.events));
       return result.events;
     } else return null; 
   }
