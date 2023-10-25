@@ -5,6 +5,7 @@ import EventList from './components/EventList';
 // import Event from './components/Event';
 import NumberOfEvents from './components/NumberOfEvents';
 import { InfoAlert } from './components/Alert';
+import { ErrorAlert } from './components/Alert';
 
 import { extractLocations, getEvents } from './api';
 
@@ -16,6 +17,7 @@ const App = () => {
   const [allLocations, setAllLocations] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
   const [infoAlert, setInfoAlert] = useState("");
+  const [errorAlert, setErrorAlert] = useState("");
   
   useEffect(() => {
     fetchData();
@@ -33,14 +35,15 @@ const App = () => {
   return (
     <div className="App">
       <div className="alerts-container">
-        {infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
+        {infoAlert.length ? <InfoAlert text={infoAlert}/> : null};
+        {errorAlert.length ? <ErrorAlert text={errorAlert}/> : null}
       </div>
      <CitySearch allLocations={allLocations}  setCurrentCity={setCurrentCity} 
         setInfoAlert={setInfoAlert} />
      <EventList events={events} />
     {/* why tests fails when importing event? */}
      {/* <Event/> */}
-     <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+     <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
     </div>
   );
 }
