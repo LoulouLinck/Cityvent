@@ -34,16 +34,16 @@ const App = () => {
 
   return (
     <div className="App">
+      <h1>Cityvent</h1>
       <div className="alerts-container">
-        {infoAlert.length ? <InfoAlert text={infoAlert}/> : null};
+        {infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert}/> : null}
       </div>
      <CitySearch allLocations={allLocations}  setCurrentCity={setCurrentCity} 
         setInfoAlert={setInfoAlert} />
-     <EventList events={events} />
-    {/* why tests fails when importing event? */}
-     {/* <Event/> */}
      <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
+     <CityEventsChart allLocations={allLocations} events={events} />
+     <EventList events={events} />
     </div>
   );
 }
