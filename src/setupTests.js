@@ -19,3 +19,20 @@ const MESSAGES_TO_IGNORE = [
   }
 
 jest.setTimeout(40000); //fixes error warning about tests taking too long (increases default Jest timeout: 5000 ms/5s) 
+
+const { ResizeObserver } = window;
+
+beforeEach(() => {
+  //@ts-ignore
+  delete window.ResizeObserver;
+  window.ResizeObserver = jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+  }));
+});
+
+afterEach(() => {
+  window.ResizeObserver = ResizeObserver;
+  jest.restoreAllMocks();
+});
