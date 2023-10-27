@@ -4,6 +4,7 @@ import CitySearch from './components/CitySearch';
 import EventList from './components/EventList';
 // import Event from './components/Event';
 import NumberOfEvents from './components/NumberOfEvents';
+import CityEventsChart from './components/CityEventsChart';
 import { InfoAlert } from './components/Alert';
 import { ErrorAlert } from './components/Alert';
 
