@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Cityvent/static/css/main.3adc5e5c.css",
+    "main.css": "/Cityvent/static/css/main.6f45adfe.css",
     "main.js": "/Cityvent/static/js/main.9b13fa0b.js",
     "static/js/787.4b564826.chunk.js": "/Cityvent/static/js/787.4b564826.chunk.js",
     "service-worker.js": "/Cityvent/service-worker.js",
     "index.html": "/Cityvent/index.html",
-    "main.3adc5e5c.css.map": "/Cityvent/static/css/main.3adc5e5c.css.map",
+    "main.6f45adfe.css.map": "/Cityvent/static/css/main.6f45adfe.css.map",
     "main.9b13fa0b.js.map": "/Cityvent/static/js/main.9b13fa0b.js.map",
     "787.4b564826.chunk.js.map": "/Cityvent/static/js/787.4b564826.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3adc5e5c.css",
+    "static/css/main.6f45adfe.css",
     "static/js/main.9b13fa0b.js"
   ]
 }
