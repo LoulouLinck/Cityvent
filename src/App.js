@@ -47,9 +47,9 @@ const App = () => {
     <div className="App">
       <header className="App-header">  
        <h1>Cityvent</h1>
-      <div className='searchBars'>
-            <CitySearch allLocations={allLocations}  setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
-      <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
+      <div className="searchBars">
+       <CitySearch allLocations={allLocations}  setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
+       <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
       </div>
       </header>
       <div className="alerts-container">

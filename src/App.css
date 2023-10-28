@@ -40,6 +40,11 @@ p {
   margin: 5px 0;
 }
 
+.searchBars{
+  display: grid;
+  grid-template-columns: 1fr 1fr
+}
+
 input[type="text"],
 input[type="number"] {
   color: rgba(108, 55, 255, 0.514);
