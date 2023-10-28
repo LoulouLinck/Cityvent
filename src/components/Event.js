@@ -13,7 +13,7 @@ const Event = ({ event }) => {
       <p>{event.created}</p>
       <p>{event.location}</p>
       <button className="details-btn" onClick={toggleDetails}>
-        {detailsVisible ? 'Hide Details' : 'Show Details'}
+        {detailsVisible ? '- Details' : '+ Details'}
       </button>
       {detailsVisible && 
        <div className="event-details">

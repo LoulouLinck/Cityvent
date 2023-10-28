@@ -1,12 +1,35 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
-.App {
-  text-align: center;
-  padding: 2% 5%;
-}
-
-.App * {
+/* Reset the box-sizing to border-box globally */
+* {
   box-sizing: border-box;
 }
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2% 5%;
+  background-color: #faf7fd;
+  max-width: 1200px;
+  margin: 20px auto;
+  box-shadow: 0 0 1000px rgba(62, 19, 182, 0.533);
+}
+
+.App-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 60px;
+  color: rgb(104, 17, 255);
+}
+
+h1 {
+  font-size: 50px;
+}
+
 
 ul {
   padding: 0;
@@ -19,10 +42,11 @@ p {
 
 input[type="text"],
 input[type="number"] {
+  color: rgba(108, 55, 255, 0.514);
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 2px solid rgba(108, 55, 255, 0.514);
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -49,13 +73,13 @@ input[type="number"] {
   align-self: center;
   margin: 0;
   font-size: 14px;
-  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 16px -12px rgba(78, 36, 193, 0.75);
 }
 
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: #eee;
+  background-color: hsl(258, 61%, 82%);
   cursor: default;
 }
 
@@ -65,16 +89,49 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #59e2fa;
+  cursor: pointer;
+}
+
+#event-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 100px;
+  box-shadow: 2px solid rgb(99, 47, 243);
+}
+
+h2 {
+  color: #9035ff;
 }
 
 .event-item {
-  padding: 10px 10px 35px;
-  margin-bottom: 10px;
-  text-align: left;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  flex: 1 1 calc(30% - 20px);
+  max-width: calc(30% - 20px);
+  min-width: 300px;
+  border: 2px solid rgba(55, 55, 255, 0.27);
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .event-item {
+    flex: 1 1 calc(45% - 20px);
+    max-width: calc(45% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .event-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 .details-btn {
@@ -85,6 +142,8 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  background-color: rgb(110, 0, 236);
+  color: #f9f9f9;
 }
 
 .alerts-container {
@@ -93,4 +152,25 @@ input[type="number"] {
   left: 20px;
   width: 250px;
   z-index: 1000;
+}
+
+.charts-container { /* display both charts next to each other (2 columns) */
+  display: grid;
+  grid-template-columns: 1fr 1fr
+} 
+
+@media screen and (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr;
+    margin-bottom: 520px;
+  }
+
+  .charts-container > :first-child { /* creates margins between the 2 charts and rest of page elements */
+    margin-top: 20px;
+    margin-bottom: 70px; 
+  }
+
+  .charts-container > :second-child {
+    margin-bottom: 150px; 
+  }
 }

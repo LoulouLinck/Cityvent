@@ -21,7 +21,7 @@ const handleInputChanged = (event) => {
 
 return (
     <div id="numberOfEvents">
-      <label htmlFor="eventNumberInput">Number of Events:</label>
+      <label htmlFor="eventNumberInput">Number of Events </label>
       <input 
         id="eventNumberInput"
         type="text"
