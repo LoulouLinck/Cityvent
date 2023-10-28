@@ -5,6 +5,7 @@ import EventList from './components/EventList';
 // import Event from './components/Event';
 import NumberOfEvents from './components/NumberOfEvents';
 import CityEventsChart from './components/CityEventsChart';
+import EventGenresChart from './components/EventGenresChart';
 import { InfoAlert } from './components/Alert';
 import { ErrorAlert } from './components/Alert';
 
@@ -44,6 +45,11 @@ const App = () => {
         setInfoAlert={setInfoAlert} />
      <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
      <CityEventsChart allLocations={allLocations} events={events} />
+      
+     <div className="charts-container">
+       <CityEventsChart allLocations={allLocations} events={events} />
+       <EventGenresChart events={events} />
+     </div>
      <EventList events={events} />
     </div>
   );
