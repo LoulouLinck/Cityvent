@@ -2,8 +2,8 @@
 
 > This is an app built using React on the frontend, and AWS Lambda on the backend. It displays a list of events, which is fetching the events from Google Calendar API, that can be filtered by city or number of events.
 >
-<img src"cityvent_screenshot1.png"/>
-<img src"cityvent_screenshot2.png"/>
+<img src="cityvent_screenshot1.png"/>
+<img src="cityvent_screenshot2.png"/>
 
 ## Objective
 Create a serverless, progressive web application (PWA) in React following the test-driven development (TDD) approach, integrating with Google Calendar API to fetch and showcase upcoming events.
